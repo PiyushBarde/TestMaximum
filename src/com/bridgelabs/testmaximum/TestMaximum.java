@@ -1,30 +1,40 @@
 package com.bridgelabs.testmaximum;
-import java.util.Scanner;
-public class TestMaximum {
-	static Integer num1,num2,num3;
-	public TestMaximum(Integer num1, Integer num2, Integer num3) {
-				super();
-				this.num1 = num1;
-				this.num2 = num2;
-				this.num3 = num3;
-	}
-	public static class TestMaximumFloat{
-			static Float numF1, numF2, numF3;
-			public TestMaximumFloat(Float numF1, Float numF2, Float numF3) {
-				super();
-				this.numF1 = numF1;
-				this.numF2 = numF2;
-				this.numF3 = numF3;
-			}
-	public static class TestMaximumString{
-			static String name1, name2, name3;
-			public TestMaximumString(String name1, String name2, String name3) {
-				super();
-				this.name1 = name1;
-				this.name2 = name2;
-				this.name3 = name3;
-			}
+public class TestMaximum < T extends Comparable < T >> {
+			T firstValue, secondValue, thirdValue;
+
 		
-		}
+	   static < T extends Comparable < T >> T testMaximum(T subfirstValue, T subsecondValue, T subthirdValue) {
+		   	T max;
+	        if(subfirstValue.compareTo(subsecondValue)>0 && subfirstValue.compareTo(subthirdValue)>0) {
+		             
+		            max = subfirstValue;
+		            printMax(subfirstValue,subsecondValue,subthirdValue,max);
+		        }
+		    else if(subsecondValue.compareTo(subfirstValue)>0 && subsecondValue.compareTo(subthirdValue)>0) {
+		            
+		            max = subsecondValue;
+		            printMax(subfirstValue,subsecondValue,subthirdValue,max);
+		        }
+		    else {
+		       
+		            max = subthirdValue;
+		            printMax(subfirstValue,subsecondValue,subthirdValue,max);
+		        }
+	        return max;
+		    }
+	   static < T  extends Comparable <T>> void printMax(T printFirstValue,T printSecondValue,T printThirdValue,T subMax) {
+		   System.out.println("Maximum value is " + subMax + " among " + printFirstValue + " , " + printSecondValue + " , " + 
+				   				printThirdValue);
+	   }
+	   
+
+	public static void main(String[] args) {
+
+		System.out.println("Integer value Passed = 65,49,12");
+		testMaximum(65,49,12);
+		System.out.println("Float Passed = 15.25,35.25,15.65");
+		testMaximum(15.25,35.25,15.65);
+		System.out.println("String Passed = Jackfruit,orange,Pineapple ");
+		testMaximum("Jackfruit","orange","Pineapple");
 	}
 }
