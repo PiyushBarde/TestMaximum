@@ -33,5 +33,7 @@ public class IntegerForTestMaximum {
 		calculatingMaximumInt(TestMaximum.num1,TestMaximum.num2,TestMaximum.num3);
 		FloatForTestMaximum.floatForTestMaximum();
 		FloatForTestMaximum.calculatingMaximumFloat();
+		StringforTestMaximum.stringforTestMaximum();
+		StringforTestMaximum.calculatingMaximumInt();
 	}
 }
